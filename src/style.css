@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .breed-select {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    margin: 20px auto;
+    display: block;
+  }
