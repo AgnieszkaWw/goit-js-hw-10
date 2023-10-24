@@ -1,18 +1,14 @@
-import { fetchCountries } from './fetchCountries';
-
 const searchBox = document.getElementById('search-box');
-const countryList = document.getElementById('country-list');
-const countryInfo = document.getElementById('country-info');
+const countryList = document.getElementById('search-button');
+const countryInfo = document.getElementById('results');
 
-const debounce = require('lodash.debounce');
+const debounceSearchCountry = _.debounce(searchAnotherCountry, 300);
 
 function searchCountry(countryName) {
-  console.log(`Wyszukiwanie kraju: ${countryName}`);
-}
+    console.log(`Wyszukiwanie kraju: ${countryName}`);
+  }
 
-const debounceSearchCountry = debounce(searchCountry, 300);
-
-searchBox.addEventListener('input', debounceSearch);
+searchBox.addEventListener('input', debounceSearchCountry);
 
 async function searchAnotherCountry() {
     const searchTerm = searchBox.value.trim();
@@ -72,7 +68,6 @@ function displayCountryInfo(country) {
 
 
 if (typeof Notiflix !== 'undefined' && typeof Notiflix.Notify === 'function') {
-    // Użyj Notiflix.Notify
 } else {
     console.error("Biblioteka Notiflix nie jest zdefiniowana lub nie zawiera metody Notify.");
 }
