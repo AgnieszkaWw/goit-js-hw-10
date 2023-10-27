@@ -1,4 +1,4 @@
-import Notiflix from '../notiflix';
+import Notiflix from '../netiflix';
 import debounce from '../lodash.debounce';
 import { fetchCountries } from './fetchCountries';
 
