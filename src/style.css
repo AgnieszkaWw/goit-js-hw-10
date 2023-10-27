@@ -3,17 +3,13 @@ body {
     text-align: center;
   }
 
-  h1 {
-    color: #333;
-}
-
   #search-box {
     width: 300px;
     padding: 10px;
     font-size: 16px;
 }
 
-#search-button {
+#country-list {
   padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
@@ -22,7 +18,7 @@ body {
     cursor: pointer;
 }
 
-#results {
+#country-info {
   margin-top: 20px;
   font-size: 18px;
 }

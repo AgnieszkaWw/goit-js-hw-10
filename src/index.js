@@ -1,8 +1,12 @@
-const searchBox = document.getElementById('search-box');
-const countryList = document.getElementById('search-button');
-const countryInfo = document.getElementById('results');
+import Notiflix from '../notiflix';
+import debounce from '../lodash.debounce';
+import { fetchCountries } from './fetchCountries';
 
-const debounceSearchCountry = _.debounce(searchAnotherCountry, 300);
+const searchBox = document.getElementById('search-box');
+const countryList = document.getElementById('country-list');
+const countryInfo = document.getElementById('country-info');
+
+const debounceSearchCountry = debounce(searchAnotherCountry, 300);
 
 function searchCountry(countryName) {
     console.log(`Wyszukiwanie kraju: ${countryName}`);
@@ -61,7 +65,7 @@ function displayCountryInfo(country) {
         <h2>${country.name.official}</h2>
         <p>Capital: ${country.capital}</p>
         <p>Population: ${country.population}</p>
-        <p>Languages: ${country.languages.join(', ')}</p>
+        <p>Languages: ${Object.values(country.languages).join(', ')}</p>
     `;
     countryInfo.appendChild(countryCard);
 }
