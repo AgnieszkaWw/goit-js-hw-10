@@ -1,5 +1,6 @@
-import Notiflix from '../netiflix';
-import debounce from '../lodash.debounce';
+// Nadal mam problem z Notflix
+import Notiflix from 'notiflix';
+import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
 
 const searchBox = document.getElementById('search-box');
@@ -7,10 +8,6 @@ const countryList = document.getElementById('country-list');
 const countryInfo = document.getElementById('country-info');
 
 const debounceSearchCountry = debounce(searchAnotherCountry, 300);
-
-function searchCountry(countryName) {
-    console.log(`Wyszukiwanie kraju: ${countryName}`);
-  }
 
 searchBox.addEventListener('input', debounceSearchCountry);
 
@@ -68,10 +65,4 @@ function displayCountryInfo(country) {
         <p>Languages: ${Object.values(country.languages).join(', ')}</p>
     `;
     countryInfo.appendChild(countryCard);
-}
-
-
-if (typeof Notiflix !== 'undefined' && typeof Notiflix.Notify === 'function') {
-} else {
-    console.error("Biblioteka Notiflix nie jest zdefiniowana lub nie zawiera metody Notify.");
 }
