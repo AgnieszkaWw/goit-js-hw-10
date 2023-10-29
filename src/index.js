@@ -1,3 +1,4 @@
+// Nadal mam problem z Notflix
 import Notiflix from 'notiflix';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './fetchCountries';
